@@ -15,10 +15,15 @@ final class WelcomeViewController: UIViewController {
     
     private let VALUE_LABEL_FONT_SIZE: CGFloat = 40
     
+    private let COMMENT_VIEW_CORNER_RADIUS: CGFloat = 12
+    private let COMMENT_VIEW_FONT_SIZE: CGFloat = 16
+    private let COMMENT_VIEW_DEFAULT_TEXT = "Start pushing button to see some comments"
+    
     private let commentLabel = UILabel()
     private let valueLabel = UILabel()
     private var value: Int = 0
     private let incrementButton = UIButton()
+    private var commentView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,7 @@ final class WelcomeViewController: UIViewController {
         view.backgroundColor = .lightGray
         setupIncrementButton()
         setupValueLabel()
+        commentView = setupCommentView()
     }
     
     private func setupIncrementButton() {
@@ -63,6 +69,23 @@ final class WelcomeViewController: UIViewController {
     
     private func updateUI() {
         valueLabel.text = "\(value)"
+    }
+    
+    private func setupCommentView() -> UIView {
+        let commentView = UIView()
+        commentView.backgroundColor = .white
+        commentView.layer.cornerRadius = COMMENT_VIEW_CORNER_RADIUS
+        view.addSubview(commentView)
+        commentView.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
+        commentView.pin(to: view, [.left: 24, .right: 24])
+        commentLabel.font = .systemFont(ofSize: COMMENT_VIEW_FONT_SIZE, weight: .regular)
+        commentLabel.text = COMMENT_VIEW_DEFAULT_TEXT
+        commentLabel.textColor = .systemGray
+        commentLabel.numberOfLines = 0
+        commentLabel.textAlignment = .center
+        commentView.addSubview(commentLabel)
+        commentLabel.pin(to: commentView, [.top: 16, .left: 16, .bottom: 16, .right: 16])
+        return commentView
     }
 }
 
