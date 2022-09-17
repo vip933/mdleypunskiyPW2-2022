@@ -31,6 +31,11 @@ final class WelcomeViewController: UIViewController {
         setupUI()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     private func setupUI() {
         view.backgroundColor = .lightGray
@@ -65,7 +70,16 @@ final class WelcomeViewController: UIViewController {
     @objc
     private func incrementButtonPressed() {
         value += 1
-        updateUI()
+        let generatorLight = UIImpactFeedbackGenerator(style: .light)
+        let generatorHeavy = UIImpactFeedbackGenerator(style: .heavy)
+        if value % 10 == 0 {
+            generatorHeavy.impactOccurred()
+        } else {
+            generatorLight.impactOccurred()
+        }
+        UIView.animate(withDuration: 1) {
+            self.updateUI()
+        }
     }
     
     private func updateUI() {
