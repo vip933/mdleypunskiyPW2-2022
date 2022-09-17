@@ -38,10 +38,11 @@ final class WelcomeViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemGray6
         setupIncrementButton()
         setupValueLabel()
         commentView = setupCommentView()
+        setupMenuButtons()
     }
     
     private func setupIncrementButton() {
@@ -65,6 +66,20 @@ final class WelcomeViewController: UIViewController {
         view.addSubview(valueLabel)
         valueLabel.pinBottom(to: incrementButton.topAnchor, 16)
         valueLabel.pinCenter(to: view.centerXAnchor)
+    }
+    
+    private func setupMenuButtons() {
+        let colorsButton = UIButton.makeMenuButton(title: "🎨")
+        let notesButton = UIButton.makeMenuButton(title: "📝")
+        let newsButton = UIButton.makeMenuButton(title: "📰")
+     
+        let buttonsSV = UIStackView(arrangedSubviews: [colorsButton, notesButton, newsButton])
+        buttonsSV.spacing = 12
+        buttonsSV.axis = .horizontal
+        buttonsSV.distribution = .fillEqually
+        view.addSubview(buttonsSV)
+        buttonsSV.pin(to: view, [.left: 24, .right: 24])
+        buttonsSV.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor, 24)
     }
     
     @objc

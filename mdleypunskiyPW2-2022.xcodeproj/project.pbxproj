@@ -14,6 +14,7 @@
 		9419E6A728D5CFFF00C29FB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9419E6A528D5CFFF00C29FB5 /* LaunchScreen.storyboard */; };
 		9419E6AF28D5D6E400C29FB5 /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419E6AE28D5D6E400C29FB5 /* UIView+Pin.swift */; };
 		9419E6B228D5DF5200C29FB5 /* NSAttributedString+Hyperlink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419E6B128D5DF5200C29FB5 /* NSAttributedString+Hyperlink.swift */; };
+		94F0D6E128D619DB0095E61E /* UIButton+CustomMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F0D6E028D619DB0095E61E /* UIButton+CustomMenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9419E6A828D5CFFF00C29FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9419E6AE28D5D6E400C29FB5 /* UIView+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
 		9419E6B128D5DF5200C29FB5 /* NSAttributedString+Hyperlink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Hyperlink.swift"; sourceTree = "<group>"; };
+		94F0D6E028D619DB0095E61E /* UIButton+CustomMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+CustomMenuButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				9419E6AE28D5D6E400C29FB5 /* UIView+Pin.swift */,
 				9419E6B128D5DF5200C29FB5 /* NSAttributedString+Hyperlink.swift */,
+				94F0D6E028D619DB0095E61E /* UIButton+CustomMenuButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				9419E69F28D5CFFE00C29FB5 /* WelcomeViewController.swift in Sources */,
 				9419E6B228D5DF5200C29FB5 /* NSAttributedString+Hyperlink.swift in Sources */,
 				9419E69B28D5CFFE00C29FB5 /* AppDelegate.swift in Sources */,
+				94F0D6E128D619DB0095E61E /* UIButton+CustomMenuButton.swift in Sources */,
 				9419E6AF28D5D6E400C29FB5 /* UIView+Pin.swift in Sources */,
 				9419E69D28D5CFFE00C29FB5 /* SceneDelegate.swift in Sources */,
 			);
