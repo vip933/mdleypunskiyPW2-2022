@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
     
-    class func makeMenuButton(title: String) -> UIButton {
+    class func makeCustomMenuButton(title: String) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
         button.setTitleColor(.black, for: .normal)

@@ -24,6 +24,10 @@ final class WelcomeViewController: UIViewController {
     private var value: Int = 0
     private let incrementButton = UIButton()
     private var commentView: UIView?
+    
+    private var colorsButton: UIButton?
+    private var notesButton: UIButton?
+    private var newsButton: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +73,18 @@ final class WelcomeViewController: UIViewController {
     }
     
     private func setupMenuButtons() {
-        let colorsButton = UIButton.makeMenuButton(title: "🎨")
-        let notesButton = UIButton.makeMenuButton(title: "📝")
-        let newsButton = UIButton.makeMenuButton(title: "📰")
-     
+        let colorsButton = UIButton.makeCustomMenuButton(title: "🎨")
+        colorsButton.addTarget(self, action: #selector(bottomButtonWasPressedStartHapticResponse), for: .touchUpInside)
+        self.colorsButton = colorsButton
+        
+        let notesButton = UIButton.makeCustomMenuButton(title: "📝")
+        notesButton.addTarget(self, action: #selector(bottomButtonWasPressedStartHapticResponse), for: .touchUpInside)
+        self.notesButton = notesButton
+        
+        let newsButton = UIButton.makeCustomMenuButton(title: "📰")
+        newsButton.addTarget(self, action: #selector(bottomButtonWasPressedStartHapticResponse), for: .touchUpInside)
+        self.newsButton = newsButton
+    
         let buttonsSV = UIStackView(arrangedSubviews: [colorsButton, notesButton, newsButton])
         buttonsSV.spacing = 12
         buttonsSV.axis = .horizontal
@@ -80,6 +92,12 @@ final class WelcomeViewController: UIViewController {
         view.addSubview(buttonsSV)
         buttonsSV.pin(to: view, [.left: 24, .right: 24])
         buttonsSV.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor, 24)
+    }
+    
+    @objc
+    private func bottomButtonWasPressedStartHapticResponse() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
     }
     
     @objc
